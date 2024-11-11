@@ -194,7 +194,7 @@ class _ListCategoriesState extends State<ListCategories> {
                   ),
                   Container(
                     height: 110,
-                    width: 103,
+                    width: 110,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: const DecorationImage(

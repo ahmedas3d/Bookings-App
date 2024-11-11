@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class CardDetails extends StatelessWidget {
   const CardDetails({super.key});
@@ -37,14 +36,7 @@ class CardDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: () async {
-                      const url = 'https://maps.app.goo.gl/1wqRwC2n9v1Wqwxo9';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onTap: () {},
                     child: const Text(
                       'مذبح الشارع العام صنعاء',
                       style: TextStyle(

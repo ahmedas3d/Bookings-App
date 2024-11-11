@@ -13,32 +13,32 @@ class _CategoriesState extends State<Categories> {
     CategoriesModel(
       imagePath: 'assets/images/image1.png',
       title: 'المزارع',
-      subTitle: 'مزارع تجميل في مدينتك',
+      subTitle: '8 مزارع تجميل في مدينتك',
     ),
     CategoriesModel(
       imagePath: 'assets/images/image2.png',
       title: 'خبراء التجميل',
-      subTitle: 'مركز تجميل في مدينتك',
+      subTitle: '11 مركز تجميل في مدينتك',
     ),
     CategoriesModel(
       imagePath: 'assets/images/image3.png',
       title: 'DJ - الموسيقى',
-      subTitle: 'دي جي تجميل في مدينتك',
+      subTitle: '11 دي جي تجميل في مدينتك',
     ),
     CategoriesModel(
       imagePath: 'assets/images/image4.png',
       title: 'الشاليهات',
-      subTitle: 'شاليه تجميل في مدينتك',
+      subTitle: '55 شاليه تجميل في مدينتك',
     ),
     CategoriesModel(
       imagePath: 'assets/images/image5.png',
       title: 'الفنادق',
-      subTitle: 'فندق تجميل في مدينتك',
+      subTitle: '42 فندق تجميل في مدينتك',
     ),
     CategoriesModel(
       imagePath: 'assets/images/image6.png',
       title: 'باقات التصوير',
-      subTitle: 'مصور تجميل في مدينتك',
+      subTitle: '17 مصور تجميل في مدينتك',
     ),
   ];
 
@@ -52,37 +52,41 @@ class _CategoriesState extends State<Categories> {
           scrollDirection: Axis.horizontal, // Set to horizontal scrolling
           itemCount: category.length,
           itemBuilder: (context, index) {
-            return Container(
-              width: 180,
-              margin:
-                  const EdgeInsets.only(right: 10), // Add spacing between items
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(category[index].imagePath),
-                  fit: BoxFit
-                      .cover, // Ensures the image covers the entire container
-                  colorFilter: const ColorFilter.mode(
-                    Colors.black54,
-                    BlendMode.darken,
+            return GestureDetector(
+              onTap: () {
+                if (category[index].title == 'الشاليهات') {
+                  Navigator.pushNamed(context, '/chalets');
+                } else {
+                  print('Arrow tapped');
+                }
+              },
+              child: Container(
+                width: 180,
+                margin: const EdgeInsets.only(
+                    right: 10), // Add spacing between items
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(category[index].imagePath),
+                    fit: BoxFit
+                        .cover, // Ensures the image covers the entire container
+                    colorFilter: const ColorFilter.mode(
+                      Colors.black54,
+                      BlendMode.darken,
+                    ),
                   ),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 5, // A bit of spread for a softer shadow
+                    ),
+                  ],
                 ),
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 5, // A bit of spread for a softer shadow
-                  ),
-                ],
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: 0, // Slightly adjust position
-                    right: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print('Arrow tapped');
-                      },
+                child: Stack(
+                  children: [
+                    Positioned(
+                      bottom: 0, // Slightly adjust position
+                      right: 0,
                       child: Container(
                         height: 50,
                         width: 160,
@@ -108,7 +112,7 @@ class _CategoriesState extends State<Categories> {
                               ),
                               Text(
                                 category[index].subTitle,
-                                textAlign: TextAlign.right,
+                                textDirection: TextDirection.rtl,
                                 style: const TextStyle(
                                   fontFamily: 'Almarai',
                                   fontSize: 12,
@@ -119,8 +123,8 @@ class _CategoriesState extends State<Categories> {
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },

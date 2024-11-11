@@ -95,7 +95,7 @@ class _UpBarState extends State<UpBar> {
                     textAlign: TextAlign.right,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      prefixIcon: Icon(Icons.menu_rounded),
+                      prefixIcon: Icon(Icons.tune),
                       hintText: 'عن ماذا تبحث ؟',
                       hintStyle: TextStyle(
                         color: Colors.grey,

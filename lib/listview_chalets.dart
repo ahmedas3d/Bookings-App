@@ -19,46 +19,51 @@ class listview extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 1,
+                      flex: 2,
                       child: Container(
-                          height: 110,
-                          decoration: BoxDecoration(
+                        height: 110,
+                        width: 100,
+                        decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Color(0xFF1E2742),
-                          ),
-                          child: Image.asset(
-                            'assets/images/chalet.png',
-                            fit: BoxFit.fill,
-                          )),
+                            color: const Color(0xFF1E2742),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/chalet.png'),
+                              fit: BoxFit.cover,
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
                     ),
                     Expanded(
-                      flex: 3,
+                      flex: 5,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'اسم الشاليه',
                                 style: TextStyle(
-                                    color: Color(0xFF1E2742),
-                                    fontSize: 20,
-                                    fontFamily: 'Almarai',
-                                    fontWeight: FontWeight.bold),
+                                  fontSize: 18,
+                                  fontFamily: 'Almarai',
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                               IconButton(
                                   onPressed: () {},
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.favorite_border,
                                   )),
                             ],
                           ),
-                          Row(
+                          const Row(
                             children: [
                               Icon(
                                 Icons.stars,
                                 color: Colors.yellow,
+                                size: 15,
                               ),
                               Text(
                                 ' (123 تقييم) ',
@@ -73,28 +78,34 @@ class listview extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Icon(Icons.location_on_outlined,
-                                  color: Colors.grey.shade600),
-                              Text(
+                              Icon(
+                                Icons.location_on_outlined,
+                                color: Colors.grey.shade600,
+                                size: 18,
+                              ),
+                              const Text(
                                 ' صنعاء مذبح الشارع العام',
                                 style: TextStyle(
-                                  color: Color(0xFF828F9C),
                                   fontFamily: 'Almarai',
+                                  fontSize: 10,
+                                  color: Colors.grey,
                                 ),
                               ),
                             ],
                           ),
-                          Row(
+                          const Row(
                             children: [
                               Icon(
                                 Icons.beach_access_outlined,
                                 color: Color(0xFF0DA1CD),
+                                size: 18,
                               ),
                               Text(
                                 'شاطئ خاص',
                                 style: TextStyle(
-                                  color: Color(0xFF0DA1CD),
                                   fontFamily: 'Almarai',
+                                  fontSize: 12,
+                                  color: Colors.blue,
                                 ),
                               ),
                               SizedBox(
@@ -103,12 +114,14 @@ class listview extends StatelessWidget {
                               Icon(
                                 Icons.pool_outlined,
                                 color: Color(0xFF0DA1CD),
+                                size: 18,
                               ),
                               Text(
                                 'حمام سباحة',
                                 style: TextStyle(
-                                  color: Color(0xFF0DA1CD),
                                   fontFamily: 'Almarai',
+                                  fontSize: 12,
+                                  color: Colors.blue,
                                 ),
                               ),
                               SizedBox(
@@ -117,12 +130,14 @@ class listview extends StatelessWidget {
                               Icon(
                                 Icons.coffee_outlined,
                                 color: Color(0xFF0DA1CD),
+                                size: 18,
                               ),
                               Text(
                                 'فطور مجاني',
                                 style: TextStyle(
-                                  color: Color(0xFF0DA1CD),
                                   fontFamily: 'Almarai',
+                                  fontSize: 12,
+                                  color: Colors.blue,
                                 ),
                               ),
                             ],

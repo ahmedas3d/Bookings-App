@@ -15,11 +15,11 @@ class PersonalData extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_outlined,
                 color: Colors.black,
               )),
-          title: Text(
+          title: const Text(
             'البيانات الشخصية',
             style: TextStyle(
               color: Colors.black,
@@ -34,7 +34,7 @@ class PersonalData extends StatelessWidget {
                 onPressed: () {},
                 icon: CircleAvatar(
                   backgroundColor: Colors.grey.shade200,
-                  child: Icon(
+                  child: const Icon(
                     Icons.notifications_none,
                     color: Colors.black,
                   ),
@@ -50,7 +50,7 @@ class PersonalData extends StatelessWidget {
                   Container(
                     height: 103,
                     width: 103,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.blue,
                     ),
@@ -66,7 +66,7 @@ class PersonalData extends StatelessWidget {
                     bottom: 0,
                     child: IconButton(
                         onPressed: () {},
-                        icon: CircleAvatar(
+                        icon: const CircleAvatar(
                             radius: 17,
                             backgroundColor: Colors.white,
                             child: Icon(
@@ -78,7 +78,7 @@ class PersonalData extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "أحمد عبدالله ",
                       style: TextStyle(
                         fontSize: 20,
@@ -92,7 +92,7 @@ class PersonalData extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   '@AhmedA',
                   style: TextStyle(
                     fontSize: 15,
@@ -101,7 +101,7 @@ class PersonalData extends StatelessWidget {
                   ),
                   textDirection: TextDirection.ltr,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('رقم الحساب: ',
@@ -116,7 +116,7 @@ class PersonalData extends StatelessWidget {
                         ))
                   ],
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('إنشاء الحساب: ',
@@ -131,45 +131,45 @@ class PersonalData extends StatelessWidget {
                         ))
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 TextForm(
-                  txt: 'الاسم',
+                  txt: 'أحمد عبدلله',
                   icoon: Icons.cancel_outlined,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextForm(
-                  txt: 'رقم الهاتف',
+                  txt: '844403415500536',
                   icoon: Icons.cancel_outlined,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextForm(
-                  txt: 'تاريخ الميلاد',
+                  txt: '15/12/2002',
                   icoon: Icons.calendar_month_outlined,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextForm(
-                  txt: 'الجنس',
+                  txt: 'ذكر',
                   icoon: Icons.keyboard_arrow_down,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF0DA1CD),
+                      backgroundColor: const Color(0xFF0DA1CD),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
                       minimumSize: const Size(200, 50)),
-                  child: Text(
+                  child: const Text(
                     'التسجيل كمقدم خدمة ',
                     style: TextStyle(
                       color: Colors.white,
@@ -191,24 +191,36 @@ class TextForm extends StatelessWidget {
   final IconData icoon;
   final String txt;
   TextForm({super.key, required this.txt, required this.icoon});
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: TextStyle(
-        fontFamily: 'Almarai',
-      ),
       decoration: InputDecoration(
         fillColor: Colors.grey.shade100,
         filled: true,
         labelText: txt,
-        border: OutlineInputBorder(),
+        labelStyle: const TextStyle(
+          fontFamily: 'Almarai',
+        ),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
+        disabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
         suffixIcon: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              icoon,
-              color: Colors.grey,
-            )),
+          onPressed: () {},
+          icon: Icon(
+            icoon,
+            color: Colors.grey,
+          ),
+        ),
       ),
+      enabled: false, // منع الكتابة
     );
   }
 }

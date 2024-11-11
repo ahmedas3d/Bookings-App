@@ -11,7 +11,8 @@ class Chalets extends StatelessWidget {
         child: Scaffold(
             backgroundColor: Colors.white,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(70.0), // Set custom height here
+              preferredSize:
+                  const Size.fromHeight(70.0), // Set custom height here
 
               child: AppBar(
                 backgroundColor: Colors.transparent,
@@ -23,11 +24,11 @@ class Chalets extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back_outlined,
                       color: Color(0xFF1E2742),
                     )),
-                title: Text(
+                title: const Text(
                   'شاليهات ',
                   style: TextStyle(
                       color: Colors.black,
@@ -39,13 +40,9 @@ class Chalets extends StatelessWidget {
                 actions: [
                   IconButton(
                       onPressed: () {},
-                      icon: CircleAvatar(
-                        radius: 14,
-                        backgroundColor: Colors.grey.shade200,
-                        child: Icon(
-                          Icons.notifications_none,
-                          color: Color(0xFF1E2742),
-                        ),
+                      icon: const Icon(
+                        Icons.notifications_none,
+                        color: Color(0xFF1E2742),
                       )),
                 ],
               ),
@@ -55,7 +52,7 @@ class Chalets extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   TextField(
@@ -64,18 +61,21 @@ class Chalets extends StatelessWidget {
                         prefixIconColor: Colors.blue,
                         suffixIcon: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.tune,
                               color: Color(0xFF1E2742),
                             )),
                         hintText: 'ابحث هنا',
-                        hintStyle:
-                            const TextStyle(color: Colors.black, fontSize: 20),
+                        hintStyle: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Almarai',
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   SingleChildScrollView(
@@ -90,10 +90,10 @@ class Chalets extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  Text(
+                  const Text(
                     "الأعلى تقييما! ",
                     style: TextStyle(
                       fontSize: 23,
@@ -101,7 +101,7 @@ class Chalets extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  listview()
+                  const listview()
                 ],
               ),
             )));
@@ -122,7 +122,7 @@ class ScrollRow extends StatelessWidget {
         onPressed: () {},
         child: Text(
           txt,
-          style: TextStyle(
+          style: const TextStyle(
             fontFamily: 'Almarai',
             color: Colors.black,
             fontSize: 17,

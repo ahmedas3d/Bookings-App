@@ -106,7 +106,9 @@ class Profile extends StatelessWidget {
                         ],
                       ),
                       trailing: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/personalData');
+                        },
                         icon: const Icon(
                           Icons.edit,
                           color: Colors.white,
