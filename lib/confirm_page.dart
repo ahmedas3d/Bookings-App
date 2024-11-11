@@ -6,102 +6,114 @@ class ConfirmPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final fontSizeTitle = screenWidth * 0.07; // Adjust based on screen width
+    final fontSizeSubtitle = screenWidth * 0.045;
+    final buttonFontSize = screenWidth * 0.05;
+
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/success.png'),
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              'تم تأكيد الحجز',
-              style: TextStyle(
-                fontFamily: 'Almarai',
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/success.png',
+                width: screenWidth * 0.5, // Adjust width based on screen size
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Text(
-              'يمكنك تغيير او الغاء الحجز بكل سهولة',
-              style: TextStyle(
-                fontFamily: 'Almarai',
-                fontSize: 16,
+              SizedBox(
+                height: screenWidth * 0.03,
               ),
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            const Text(
-              'هل تحتاج خدمات اخرى؟',
-              style: TextStyle(
-                fontFamily: 'Almarai',
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+              Text(
+                'تم تأكيد الحجز',
+                style: TextStyle(
+                  fontFamily: 'Almarai',
+                  fontSize: fontSizeTitle,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'الخدمات المقترحة مع حجزك',
-                    style: TextStyle(
-                      fontFamily: 'Almarai',
-                      fontSize: 22,
-                      color: Colors.grey[700],
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: screenWidth * 0.03,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const ListCategories(),
-            const SizedBox(
-              height: 10,
-            ),
-            const ListCategories(),
-            const SizedBox(
-              height: 25,
-            ),
-            GestureDetector(
-              onTap: () {
-                /////////////
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Container(
-                  height: 55,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border:
-                        Border.all(width: 3, color: const Color(0xff1E2742)),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'العودة للصفحة الرئيسية',
+              Text(
+                'يمكنك تغيير او الغاء الحجز بكل سهولة',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Almarai',
+                  fontSize: fontSizeSubtitle,
+                ),
+              ),
+              SizedBox(
+                height: screenWidth * 0.06,
+              ),
+              Text(
+                'هل تحتاج خدمات اخرى؟',
+                style: TextStyle(
+                  fontFamily: 'Almarai',
+                  fontSize: fontSizeSubtitle,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                height: screenWidth * 0.05,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'الخدمات المقترحة مع حجزك',
                       style: TextStyle(
+                        fontFamily: 'Almarai',
+                        fontSize: fontSizeTitle * 0.8,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: screenWidth * 0.05,
+              ),
+              const ListCategories(),
+              SizedBox(
+                height: screenWidth * 0.03,
+              ),
+              const ListCategories(),
+              SizedBox(
+                height: screenWidth * 0.06,
+              ),
+              GestureDetector(
+                onTap: () {
+                  // Navigate back to the main page
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                  child: Container(
+                    height: 55,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border:
+                          Border.all(width: 3, color: const Color(0xff1E2742)),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'العودة للصفحة الرئيسية',
+                        style: TextStyle(
                           fontFamily: 'Almarai',
-                          fontSize: 18,
-                          color: Color(0xff1E2742),
-                          fontWeight: FontWeight.bold),
+                          fontSize: buttonFontSize,
+                          color: const Color(0xff1E2742),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

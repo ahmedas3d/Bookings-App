@@ -128,40 +128,7 @@ class BookingSection extends StatelessWidget {
                     },
                     child: Container(
                       height: 55,
-                      width: 190,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 2, color: const Color(0xff1E2742)),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'أرسل رسالة',
-                            style: TextStyle(
-                                fontFamily: 'Almarai',
-                                fontSize: 18,
-                                color: Color(0xff1E2742)),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Icon(
-                            Icons.chat_outlined,
-                            color: Color(0xff1E2742),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      /////////////
-                    },
-                    child: Container(
-                      height: 55,
-                      width: 190,
+                      width: 150,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: const Color(0xff1E2742),
@@ -174,6 +141,44 @@ class BookingSection extends StatelessWidget {
                               fontSize: 18,
                               color: Colors.white),
                         ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      /////////////
+                    },
+                    child: Container(
+                      height: 55,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 2, color: const Color(0xff1E2742)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.chat_outlined,
+                            color: Color(0xff1E2742),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'أرسل رسالة',
+                            style: TextStyle(
+                              fontFamily: 'Almarai',
+                              fontSize: 18,
+                              color: Color(0xff1E2742),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                        ],
                       ),
                     ),
                   ),

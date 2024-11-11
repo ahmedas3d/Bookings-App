@@ -23,13 +23,10 @@ class Profile extends StatelessWidget {
               actions: [
                 IconButton(
                     onPressed: () {},
-                    icon: const CircleAvatar(
-                      backgroundColor: Color(0xFF161C300D),
-                      child: Icon(
-                        size: 25,
-                        Icons.notifications_none,
-                        color: Color(0xFF1E2742),
-                      ),
+                    icon: const Icon(
+                      size: 26,
+                      Icons.notifications_none,
+                      color: Color(0xFF1E2742),
                     )),
               ],
             ),
@@ -256,7 +253,13 @@ class Profile extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  list(txt: "الأعدادات", icoon: Icons.settings_outlined),
+                  list(
+                    txt: "الأعدادات",
+                    icoon: Icons.settings_outlined,
+                    onTap: () {
+                      Navigator.pushNamed(context, '/settingsScreen');
+                    },
+                  ),
                   const SizedBox(
                     height: 30,
                   ),
@@ -284,38 +287,42 @@ class Profile extends StatelessWidget {
 class list extends StatelessWidget {
   final IconData icoon;
   final String txt;
+  final VoidCallback? onTap;
 
-  list({super.key, required this.txt, required this.icoon});
+  list({super.key, required this.txt, required this.icoon, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey.shade100,
-      ),
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundColor: const Color(0XFFDEECF1),
-          child: Icon(
-            icoon,
-            size: 25,
-            color: const Color(0xFF1E2742),
-          ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey.shade100,
         ),
-        title: Text(
-          txt,
-          style: const TextStyle(
-            fontFamily: 'Almarai',
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundColor: const Color(0XFFDEECF1),
+            child: Icon(
+              icoon,
+              size: 25,
+              color: const Color(0xFF1E2742),
+            ),
           ),
+          title: Text(
+            txt,
+            style: const TextStyle(
+              fontFamily: 'Almarai',
+            ),
+          ),
+          trailing: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                size: 15,
+                Icons.arrow_forward_ios,
+                color: Color(0xFF1E2742),
+              )),
         ),
-        trailing: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              size: 15,
-              Icons.arrow_forward_ios,
-              color: Color(0xFF1E2742),
-            )),
       ),
     );
   }

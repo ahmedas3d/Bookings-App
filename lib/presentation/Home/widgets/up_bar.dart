@@ -21,8 +21,12 @@ class _UpBarState extends State<UpBar> {
 
   @override
   Widget build(BuildContext context) {
+    // الحصول على العرض والارتفاع الحاليين للشاشة
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      height: 280,
+      height: screenHeight * 0.36, // تعيين الارتفاع كنسبة من ارتفاع الشاشة
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -39,127 +43,132 @@ class _UpBarState extends State<UpBar> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.05, // نسبة من العرض للشاشة
+          vertical: screenHeight * 0.04, // نسبة من ارتفاع الشاشة
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(
-              height: 18,
+            SizedBox(
+              height: screenHeight * 0.02,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Icon(
                   Icons.notifications_none_outlined,
                   color: Colors.white,
-                  size: 28,
+                  size: screenWidth * 0.07, // الحجم حسب العرض
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   'مرحبا حسان',
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     fontFamily: 'Almarai',
                     fontWeight: FontWeight.bold,
-                    fontSize: 24,
+                    fontSize: screenWidth * 0.06, // الخط كنسبة من العرض
                     color: Colors.white,
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 3,
+            SizedBox(
+              height: screenHeight * 0.01,
             ),
-            const Text(
+            Text(
               'ما الذي تحاتاجه؟',
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontFamily: 'Almarai',
-                fontSize: 20,
+                fontSize: screenWidth * 0.05,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: screenHeight * 0.02,
             ),
             Container(
-              height: 55,
+              height: screenHeight * 0.07,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
               ),
-              child: const Center(
+              child: Center(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
                   child: TextField(
                     textAlign: TextAlign.right,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      prefixIcon: Icon(Icons.tune),
+                      prefixIcon: Icon(Icons.tune, size: screenWidth * 0.06),
                       hintText: 'عن ماذا تبحث ؟',
                       hintStyle: TextStyle(
                         color: Colors.grey,
                         fontFamily: 'Almarai',
-                        fontSize: 18,
+                        fontSize: screenWidth * 0.045,
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: screenHeight * 0.015,
             ),
             Row(
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/bookingScreen');
+                  },
                   child: Container(
-                    height: 55,
-                    width: 200,
+                    height: screenHeight * 0.06,
+                    width: screenWidth * 0.45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color(0xff0DA1CD),
+                      color: const Color(0xff0DA1CD),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
                         'ابحث',
                         style: TextStyle(
                           fontFamily: 'Almarai',
-                          fontSize: 20,
+                          fontSize: screenWidth * 0.05,
                           color: Colors.white,
                         ),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 11,
+                SizedBox(
+                  width: screenWidth * 0.06,
                 ),
                 Container(
-                  height: 55,
-                  width: 160,
+                  height: screenHeight * 0.06,
+                  width: screenWidth * 0.39,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
                       borderRadius: BorderRadius.circular(10),
-                      hint: const Text(
+                      hint: Text(
                         'المحافظة',
                         style: TextStyle(
                           fontFamily: 'Almarai',
-                          fontSize: 18,
+                          fontSize: screenWidth * 0.045,
                           color: Colors.grey,
                         ),
                       ),
                       value: selectedGovernorate,
                       isExpanded: true,
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.keyboard_arrow_down,
-                        size: 28,
+                        size: screenWidth * 0.06,
                         color: Colors.grey,
                       ),
                       items: governorates.map((String governorate) {
@@ -167,9 +176,9 @@ class _UpBarState extends State<UpBar> {
                           value: governorate,
                           child: Text(
                             governorate,
-                            style: const TextStyle(
-                              fontFamily: 'Almarai', // تعيين الخط هنا
-                              fontSize: 18,
+                            style: TextStyle(
+                              fontFamily: 'Almarai',
+                              fontSize: screenWidth * 0.045,
                             ),
                           ),
                         );

@@ -13,11 +13,11 @@ class ServicesSection extends StatelessWidget {
           const SizedBox(
             height: 3,
           ),
-          const Text(
+          Text(
             'لوريم إيبسوم هو نص مؤقت يستخدم في التصميم',
             style: TextStyle(
               fontFamily: 'Almarai',
-              fontSize: 18,
+              fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
             ),
           ),
           const SizedBox(
@@ -30,7 +30,7 @@ class ServicesSection extends StatelessWidget {
                 'حمام سباحة',
                 style: TextStyle(
                   fontFamily: 'Almarai',
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
                   color: Colors.grey[700],
                 ),
               ),
@@ -46,7 +46,7 @@ class ServicesSection extends StatelessWidget {
                 'طاقم عمل 25 شخص',
                 style: TextStyle(
                   fontFamily: 'Almarai',
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
                   color: Colors.grey[700],
                 ),
               ),
@@ -69,7 +69,7 @@ class ServicesSection extends StatelessWidget {
                 'اطلالة خلابة',
                 style: TextStyle(
                   fontFamily: 'Almarai',
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
                   color: Colors.grey[700],
                 ),
               ),
@@ -85,7 +85,7 @@ class ServicesSection extends StatelessWidget {
                 'فطور مجاني',
                 style: TextStyle(
                   fontFamily: 'Almarai',
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
                   color: Colors.grey[700],
                 ),
               ),

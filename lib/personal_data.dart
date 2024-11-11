@@ -32,12 +32,10 @@ class PersonalData extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {},
-                icon: CircleAvatar(
-                  backgroundColor: Colors.grey.shade200,
-                  child: const Icon(
-                    Icons.notifications_none,
-                    color: Colors.black,
-                  ),
+                icon: const Icon(
+                  Icons.notifications_none,
+                  color: Colors.black,
+                  size: 26,
                 )),
           ],
         ),

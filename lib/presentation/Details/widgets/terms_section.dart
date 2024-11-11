@@ -10,14 +10,14 @@ class TermsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
                 'يمنع دخول الحيونات منعاً باتاً',
                 style: TextStyle(
                   fontFamily: 'Almarai',
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
                   color: Colors.grey,
                 ),
               ),
@@ -34,11 +34,11 @@ class TermsSection extends StatelessWidget {
             children: [
               Container(
                 width: 330, // عرض مخصص
-                child: const Text(
+                child: Text(
                   'يمنع إحضار الشيشة أو المداعة إلى داخل القاعة',
                   style: TextStyle(
                     fontFamily: 'Almarai',
-                    fontSize: 18,
+                    fontSize: MediaQuery.of(context).size.width < 400 ? 14 : 18,
                     color: Colors.grey,
                   ),
                   softWrap: true, // النص سينتقل إلى السطر التالي

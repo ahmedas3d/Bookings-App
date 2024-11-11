@@ -8,7 +8,7 @@ class CardDetails extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Container(
-        height: 280,
+        height: 290,
         width: double.infinity,
         decoration: const BoxDecoration(
           color: Color(0xffECF3F5),
