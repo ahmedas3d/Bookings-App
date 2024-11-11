@@ -11,16 +11,25 @@ class Profile extends StatelessWidget {
             backgroundColor: Colors.white,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
-              title: Text('البروفايل ',
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 22),
+              title: const Text(
+                'البروفايل ',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Almarai',
+                    fontSize: 22),
               ),
               centerTitle: true,
               actions: [
                 IconButton(
                     onPressed: () {},
-                    icon: CircleAvatar(
+                    icon: const CircleAvatar(
                       backgroundColor: Color(0xFF161C300D),
-                      child: Icon(size: 25, Icons.notifications_none, color: Color(0xFF1E2742),),
+                      child: Icon(
+                        size: 25,
+                        Icons.notifications_none,
+                        color: Color(0xFF1E2742),
+                      ),
                     )),
               ],
             ),
@@ -33,76 +42,120 @@ class Profile extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF1E2742),
+                      color: const Color(0xFF1E2742),
                     ),
                     child: ListTile(
                       leading: Stack(children: [
                         Container(
                           height: 60,
                           width: 60,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.amber,
                           ),
                         ),
                         Positioned.fill(
                           child: ClipOval(
-                            child: Image.asset('assets/person.png',),
+                            child: Image.asset(
+                              'assets/images/person.png',
+                            ),
                           ),
                         )
                       ]),
                       title: Row(
                         children: [
-                          Text("أحمد عبدالله ",
-                            style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                          const Text(
+                            "أحمد عبدالله ",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontFamily: 'Almarai',
+                                fontWeight: FontWeight.bold),
                           ),
-                          Icon(size: 15, Icons.verified, color: Colors.blue.shade700,),
-                          Icon(size: 15, Icons.stars, color: Colors.amber,),
-                        ],),
-                      subtitle: Column(
+                          Icon(
+                            size: 15,
+                            Icons.verified,
+                            color: Colors.blue.shade700,
+                          ),
+                          const Icon(
+                            size: 15,
+                            Icons.stars,
+                            color: Colors.amber,
+                          ),
+                        ],
+                      ),
+                      subtitle: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('@AhmedA',
-                            style: TextStyle(color: Color(0xFFD7D7D7)),
+                          Text(
+                            '@AhmedA',
+                            style: TextStyle(
+                              color: Color(0xFFD7D7D7),
+                              fontFamily: 'Almarai',
+                            ),
                             textDirection: TextDirection.ltr,
                           ),
-                          Text('+90512554431',
-                            style: TextStyle(color: Color(0xFFD7D7D7)),
+                          Text(
+                            '+90512554431',
+                            style: TextStyle(
+                              color: Color(0xFFD7D7D7),
+                              fontFamily: 'Almarai',
+                            ),
                             textDirection: TextDirection.ltr,
                           )
-                        ],),
-                      trailing:IconButton(
-                          onPressed: () {},
-                          icon:Icon(Icons.edit, color: Colors.white,),
+                        ],
+                      ),
+                      trailing: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 25,),
+                  const SizedBox(
+                    height: 25,
+                  ),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color(0XFFDEECF1),
+                      color: const Color(0XFFDEECF1),
                     ),
                     child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: Icon(size: 30, Icons.badge_outlined, color: Color(0xFF1E2742),),
+                      leading: const CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          size: 30,
+                          Icons.badge_outlined,
+                          color: Color(0xFF1E2742),
                         ),
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('العضوية',),
-                            Text('ذهبية',
-                              style: TextStyle(color: Colors.amber),
-                            )
-                          ],),
-                        trailing:IconButton(
-                            onPressed: () {},
-                            icon: Icon(size: 15, Icons.arrow_forward_ios, color: Color(0xFF1E2742),)
-                        ),
+                      ),
+                      title: const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'العضوية',
+                            style: TextStyle(
+                              fontFamily: 'Almarai',
+                            ),
+                          ),
+                          Text(
+                            'ذهبية',
+                            style: TextStyle(color: Colors.amber),
+                          )
+                        ],
+                      ),
+                      trailing: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            size: 15,
+                            Icons.arrow_forward_ios,
+                            color: Color(0xFF1E2742),
+                          )),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -111,62 +164,114 @@ class Profile extends StatelessWidget {
                     child: Column(
                       children: [
                         ListTile(
-                            leading: CircleAvatar(
-                              backgroundColor: Color(0XFFDEECF1),
-                              child: Icon(Icons.badge_outlined, size: 25, color: Color(0xFF1E2742),),
+                          leading: const CircleAvatar(
+                            backgroundColor: Color(0XFFDEECF1),
+                            child: Icon(
+                              Icons.badge_outlined,
+                              size: 25,
+                              color: Color(0xFF1E2742),
                             ),
-                            title: Text('مسابقات و جوائز'),
-                            trailing:  IconButton(
-                                onPressed: () {},
-                                icon: Icon(size: 15, Icons.arrow_forward_ios, color: Color(0xFF1E2742),)
+                          ),
+                          title: const Text(
+                            'مسابقات و جوائز',
+                            style: TextStyle(
+                              fontFamily: 'Almarai',
                             ),
+                          ),
+                          trailing: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                size: 15,
+                                Icons.arrow_forward_ios,
+                                color: Color(0xFF1E2742),
+                              )),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text('للحصول على جوائز يومية',
-                              style: TextStyle(color: Color(0xFF0DA1CD),fontSize: 13),
+                            const Text(
+                              'للحصول على جوائز يومية',
+                              style: TextStyle(
+                                  fontFamily: 'Almarai',
+                                  color: Color(0xFF0DA1CD),
+                                  fontSize: 13),
                             ),
-                            SizedBox(width: 10,),
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Color(0xFF1E2742),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8)),
-                              ),
-                              child: Text('سجل دخولك اليوم ',
-                                style: TextStyle(color: Colors.white, fontSize: 15,),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF1E2742),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8)),
+                                ),
+                                child: const Text(
+                                  'سجل دخولك اليوم ',
+                                  style: TextStyle(
+                                    fontFamily: 'Almarai',
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ),
                             ),
-                          ],)
-                      ],),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   list(txt: "العناوين", icoon: Icons.location_on_outlined),
-                  SizedBox(height: 5,),
-                  list(txt: "المحفظة", icoon: Icons.account_balance_wallet_outlined),
-                  SizedBox(height: 5,),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  list(
+                      txt: "المحفظة",
+                      icoon: Icons.account_balance_wallet_outlined),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   list(txt: "تقييمات", icoon: Icons.star_border_outlined),
-                  SizedBox(height: 5,),
-                  list(txt: "دعوة الأصدقاء", icoon: Icons.person_add_alt_outlined),
-                  SizedBox(height: 5,),
-                  list(txt: "خدمة متابعة الحجوزات", icoon: Icons.badge_outlined),
-                  SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  list(
+                      txt: "دعوة الأصدقاء",
+                      icoon: Icons.person_add_alt_outlined),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  list(
+                      txt: "خدمة متابعة الحجوزات", icoon: Icons.badge_outlined),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   list(txt: "الأعدادات", icoon: Icons.settings_outlined),
-                  SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF0DA1CD),
+                        backgroundColor: const Color(0xFF0DA1CD),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8)),
                         minimumSize: const Size(200, 50)),
-                    child: Text('التسجيل كمقدم خدمة ',
-                      style: TextStyle(color: Colors.white, fontSize: 17,),
+                    child: const Text(
+                      'التسجيل كمقدم خدمة ',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                      ),
                     ),
                   ),
-                ],),
+                ],
+              ),
             ))));
   }
 }
@@ -185,16 +290,27 @@ class list extends StatelessWidget {
         color: Colors.grey.shade100,
       ),
       child: ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Color(0XFFDEECF1),
-            child: Icon(icoon, size: 25, color: Color(0xFF1E2742),),
+        leading: CircleAvatar(
+          backgroundColor: const Color(0XFFDEECF1),
+          child: Icon(
+            icoon,
+            size: 25,
+            color: const Color(0xFF1E2742),
           ),
-          title: Text(txt),
-          trailing:
-          IconButton(
-              onPressed: () {},
-              icon: Icon(size: 15, Icons.arrow_forward_ios, color: Color(0xFF1E2742),)
+        ),
+        title: Text(
+          txt,
+          style: const TextStyle(
+            fontFamily: 'Almarai',
           ),
+        ),
+        trailing: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              size: 15,
+              Icons.arrow_forward_ios,
+              color: Color(0xFF1E2742),
+            )),
       ),
     );
   }

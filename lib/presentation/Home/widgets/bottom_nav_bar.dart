@@ -1,4 +1,5 @@
 import 'package:booking_app/presentation/Home/pages/home_page.dart';
+import 'package:booking_app/profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -15,13 +16,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _pages = [
     const HomePage(),
     const Center(
-        child: Text('Favorites Page', style: TextStyle(color: Colors.black))),
-    const Center(
         child: Text('Calendar Page', style: TextStyle(color: Colors.black))),
     const Center(
         child: Text('Chat Page', style: TextStyle(color: Colors.black))),
     const Center(
         child: Text('Home Page', style: TextStyle(color: Colors.black))),
+    const Profile(),
   ];
 
   void _onItemTapped(int index) {
@@ -46,31 +46,31 @@ class _BottomNavBarState extends State<BottomNavBar> {
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
           ),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.grey,
-          //     blurRadius: 4,
-          //   ),
-          // ],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 4,
+            ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
               icon: Icon(
-                _activeIndex == 0 ? Icons.person : Icons.person_outline,
-                color: _activeIndex == 0 ? Colors.black : Colors.grey,
+                _activeIndex == 4 ? Icons.person : Icons.person_outline,
+                color: _activeIndex == 4 ? Colors.black : Colors.grey,
                 size: 30,
               ),
-              onPressed: () => _onItemTapped(0),
+              onPressed: () => _onItemTapped(4),
             ),
             IconButton(
               icon: Icon(
-                _activeIndex == 1 ? Icons.favorite : Icons.favorite_border,
-                color: _activeIndex == 1 ? Colors.black : Colors.grey,
+                _activeIndex == 3 ? Icons.favorite : Icons.favorite_border,
+                color: _activeIndex == 3 ? Colors.black : Colors.grey,
                 size: 30,
               ),
-              onPressed: () => _onItemTapped(1),
+              onPressed: () => _onItemTapped(3),
             ),
             Container(
               height: 55,
@@ -94,19 +94,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
             ),
             IconButton(
               icon: Icon(
-                _activeIndex == 3 ? Icons.chat : Icons.chat_outlined,
-                color: _activeIndex == 3 ? Colors.black : Colors.grey,
+                _activeIndex == 1 ? Icons.chat : Icons.chat_outlined,
+                color: _activeIndex == 1 ? Colors.black : Colors.grey,
                 size: 30,
               ),
-              onPressed: () => _onItemTapped(3),
+              onPressed: () => _onItemTapped(1),
             ),
             IconButton(
               icon: Icon(
                 Icons.home_filled,
-                color: _activeIndex == 4 ? Colors.black : Colors.grey,
+                color: _activeIndex == 0 ? Colors.black : Colors.grey,
                 size: 30,
               ),
-              onPressed: () => _onItemTapped(4),
+              onPressed: () => _onItemTapped(0),
             ),
           ],
         ),

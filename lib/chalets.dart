@@ -15,16 +15,25 @@ class Chalets extends StatelessWidget {
 
               child: AppBar(
                 backgroundColor: Colors.transparent,
-              flexibleSpace:
-              Image.asset('assets/bg_chalet.png',fit: BoxFit.cover,),
+                flexibleSpace: Image.asset(
+                  'assets/images/bg_chalet.png',
+                  fit: BoxFit.cover,
+                ),
                 leading: IconButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: Icon(Icons.arrow_back_outlined, color: Color(0xFF1E2742),)
-                ),
-                title: Text('شاليهات ',
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 22),
+                    icon: Icon(
+                      Icons.arrow_back_outlined,
+                      color: Color(0xFF1E2742),
+                    )),
+                title: Text(
+                  'شاليهات ',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Almarai',
+                      fontSize: 22),
                 ),
                 centerTitle: true,
                 actions: [
@@ -33,24 +42,32 @@ class Chalets extends StatelessWidget {
                       icon: CircleAvatar(
                         radius: 14,
                         backgroundColor: Colors.grey.shade200,
-                        child: Icon(Icons.notifications_none, color: Color(0xFF1E2742),),
+                        child: Icon(
+                          Icons.notifications_none,
+                          color: Color(0xFF1E2742),
+                        ),
                       )),
-                ],),
+                ],
+              ),
             ),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 15,),
+                  SizedBox(
+                    height: 15,
+                  ),
                   TextField(
                     decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.search),
                         prefixIconColor: Colors.blue,
                         suffixIcon: IconButton(
                             onPressed: () {},
-                            icon: Icon(Icons.tune, color: Color(0xFF1E2742),)
-                        ),
+                            icon: Icon(
+                              Icons.tune,
+                              color: Color(0xFF1E2742),
+                            )),
                         hintText: 'ابحث هنا',
                         hintStyle:
                             const TextStyle(color: Colors.black, fontSize: 20),
@@ -58,7 +75,9 @@ class Chalets extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         )),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -68,19 +87,26 @@ class Chalets extends StatelessWidget {
                         ScrollRow(txt: 'شبايبة'),
                         ScrollRow(txt: 'شاطئ'),
                         ScrollRow(txt: 'أعياد ميلاد'),
-                      ],),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 15,),
-                  Text("الأعلى تقييما! ",
-                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold,
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "الأعلى تقييما! ",
+                    style: TextStyle(
+                      fontSize: 23,
+                      fontFamily: 'Almarai',
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   listview()
-                ],),
+                ],
+              ),
             )));
   }
 }
-
 
 //widget scrollHorizontal
 class ScrollRow extends StatelessWidget {
@@ -96,12 +122,13 @@ class ScrollRow extends StatelessWidget {
         onPressed: () {},
         child: Text(
           txt,
-          style: TextStyle(color: Colors.black, fontSize: 17,
+          style: TextStyle(
+            fontFamily: 'Almarai',
+            color: Colors.black,
+            fontSize: 17,
           ),
         ),
       ),
     );
   }
 }
-
-

@@ -1,4 +1,5 @@
 import 'package:booking_app/models/banner_model.dart';
+import 'package:booking_app/presentation/Details/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -103,6 +104,23 @@ class _ViewImagesState extends State<ViewImages> {
                     ),
                   ],
                 ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 5,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              toolbarHeight: 28,
+              backgroundColor: Colors.transparent,
+              foregroundColor: Colors.white,
+              elevation: 0,
+              title: CustomAppBar(
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ),
