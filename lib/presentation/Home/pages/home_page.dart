@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               height: 10,
             ),
             ListCategories(),
-            SizedBox(height: 25),
+            SizedBox(height: 20),
           ],
         ),
       ),

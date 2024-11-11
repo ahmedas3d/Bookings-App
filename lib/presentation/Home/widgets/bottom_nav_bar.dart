@@ -1,3 +1,4 @@
+import 'package:booking_app/confirm_page.dart';
 import 'package:booking_app/presentation/Home/pages/home_page.dart';
 import 'package:booking_app/profile.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   // قائمة الصفحات التي تتوافق مع كل زر في BottomNavBar
   final List<Widget> _pages = [
     const HomePage(),
-    const Center(
-        child: Text('Calendar Page', style: TextStyle(color: Colors.black))),
+    const ConfirmPage(),
     const Center(
         child: Text('Chat Page', style: TextStyle(color: Colors.black))),
     const Center(

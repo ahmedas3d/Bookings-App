@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomAppBar extends StatefulWidget {
   const CustomAppBar({super.key, this.onTap});
   final VoidCallback? onTap;
+
+  @override
+  _CustomAppBarState createState() => _CustomAppBarState();
+}
+
+class _CustomAppBarState extends State<CustomAppBar> {
+  bool isFavorite = false;
+
+  void toggleFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,18 +23,19 @@ class CustomAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.favorite_border), // Corrected icon widget usage
+          onPressed: toggleFavorite,
+          icon: Icon(
+            isFavorite ? Icons.favorite : Icons.favorite_border,
+            color: isFavorite ? Colors.red : Colors.white,
+          ),
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.share), // Corrected icon widget usage
+          icon: Icon(Icons.share),
         ),
         Spacer(),
         GestureDetector(
-          onTap: () {
-            onTap?.call(); // Correctly call the onTap callback
-          },
+          onTap: widget.onTap,
           child: Icon(
             Icons.arrow_forward,
             color: Colors.white,

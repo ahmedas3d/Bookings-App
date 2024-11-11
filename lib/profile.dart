@@ -144,7 +144,10 @@ class Profile extends StatelessWidget {
                           ),
                           Text(
                             'ذهبية',
-                            style: TextStyle(color: Colors.amber),
+                            style: TextStyle(
+                              color: Colors.amber,
+                              fontFamily: 'Almarai',
+                            ),
                           )
                         ],
                       ),
